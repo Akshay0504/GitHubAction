@@ -1,0 +1,27 @@
+name: GitHub Action Project 
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest 
+
+    steps:
+      - name: checkout code
+        uses: checkout@v4
+
+      - name: deploy via ssh
+        uses: appleboy/ssh-action@1.0.4
+        with:
+          host: ${{secrets.ssh-host}}
+          username: root 
+          key : ${{secrets.ssh-key}}
+          script: |
+            cd /root/GithubAction 
+            git pull 
+            docker build -t app01 .
+            docker run -d --name app01 -p 80:80 app01
+            

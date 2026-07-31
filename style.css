@@ -1,0 +1,14 @@
+body{
+    background:#f4f4f4;
+    font-family:Arial;
+    text-align:center;
+    margin-top:100px;
+}
+
+h1{
+    color:blue;
+}
+
+ul{
+    list-style:none;
+}
