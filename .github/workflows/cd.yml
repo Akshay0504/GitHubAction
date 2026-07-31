@@ -22,6 +22,6 @@ jobs:
           script: |
             cd /home/ec2-user/GitHubAction
             git pull 
-            docker build -t app01 .
-            docker run -d --name app01 -p 80:80 app01
+            docker build -t app02 .
+            docker run -d --name app01 -p 80:80 app02
 
