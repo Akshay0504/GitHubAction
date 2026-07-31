@@ -16,12 +16,12 @@ jobs:
       - name: deploy via ssh
         uses: appleboy/ssh-action@1.0.4
         with:
-          host: ${{secrets.ssh-host}}
+          host: ${{secrets.SSH_HOST}}
           username: root 
-          key : ${{secrets.ssh-key}}
+          key : ${{secrets.SSH_KEY}}
           script: |
             cd /root/GithubAction 
             git pull 
             docker build -t app01 .
             docker run -d --name app01 -p 80:80 app01
-            
+
