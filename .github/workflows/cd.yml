@@ -3,7 +3,7 @@ name: GitHub Action Project
 on: 
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
