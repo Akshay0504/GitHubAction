@@ -20,7 +20,7 @@ jobs:
           username: ec2-user 
           key : ${{secrets.SSH_KEY}}
           script: |
-            cd /home/ec2-user/GithubAction
+            cd /home/ec2-user/GitHubAction
             git pull 
             docker build -t app01 .
             docker run -d --name app01 -p 80:80 app01
